@@ -5,4 +5,9 @@
 **Mario Schoch**
 - 17
 - Rudert
-- Aus Evilard
+- Lieblingsgames
+    - Trackmania
+    - Stardew Valley
+    - Elden Ring
+- Lieblingsfilm
+    - Inception
