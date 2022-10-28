@@ -42,10 +42,10 @@ def game_over():
         return False
 
 def play():
-    while not game_over():
+    while not (game_over() or gewonnen()):
         buchstabe = eingabe()
         auswerten(buchstabe)
-        print (buchstabe)
+        print(buchstabe)
         show()
     if gewonnen():
         print('Congratulations! You Won!')
