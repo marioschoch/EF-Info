@@ -7,10 +7,13 @@ def spielfeld():
     for zeile in feld:
         print('+------+------+------+------+------+')
         print('|      |      |      |      |      |')
-        if zeile[0] <= 10:
-            print(f'|   {(zeile[0])}  |', end='')
-        else:
-            print(f'|  {(zeile[0])}  |', end='')
+        for zahl in range(0,4):
+            for i in range(0,4):
+                if zeile[zahl][i] <= 10:
+                    print(f'|   {(zeile[0])}  |', end='')
+                else:
+                    print(f'|  {(zeile[0])}  |', end='')
+        print()
         print('|      |      |      |      |      |')
     print('+------+------+------+------+------+')
     
