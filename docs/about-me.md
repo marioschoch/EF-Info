@@ -1,6 +1,6 @@
 # Steckbrief
 
-![Ruderboot](/docs/Images/ND59015-scaled.jpg)
+![Ruderboot](Images/ND59015-scaled.jpg)
 
 **Mario Schoch**
 - 17
