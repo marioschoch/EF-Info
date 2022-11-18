@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkef_website_template=self.webpackChunkef_website_template||[]).push([[819],{9842:e=>{e.exports=JSON.parse('{"permalink":"/EF-Info/","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
