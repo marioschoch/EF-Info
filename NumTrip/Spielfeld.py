@@ -5,11 +5,12 @@ feld =[[2,4,4,4,2],[1244,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
 #print(f'hallo      {Spielfeld[0][0]}', )  #formatiert
 
 def spielfeld():
+    zeilennummer=1
     print('          A      B      C      D      E')
     for zeile in feld:
         print('      +------+------+------+------+------+')
         print('      |      |      |      |      |      |')
-        print(f'   {(1)}  ', end='')
+        print(f'   {(zeilennummer)}  ', end='')
         for zelle in zeile:
             if zelle >= 10000:
                 print(f'| {(zelle)}', end='')
@@ -24,6 +25,9 @@ def spielfeld():
         print('|')
         print('      |      |      |      |      |      |')
     print('      +------+------+------+------+------+')
+    zeilennummer= zeilennummer+1
     
+def eingabe():
+    eingabe = input('Welches feld möchten sie anwählen?')
 
-spielfeld()
+eingabe()
