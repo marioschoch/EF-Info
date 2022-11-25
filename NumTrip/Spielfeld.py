@@ -26,7 +26,8 @@ def spielfeld():
         print('      |      |      |      |      |      |')
     print('      +------+------+------+------+------+')
     zeilennummer= zeilennummer+1
-    
+
+
 def transform_eingabe(raw):
     raw = raw.upper()
     raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
@@ -40,6 +41,7 @@ def transform_eingabe(raw):
         return False
     return [x, y]
 
+    
 eingabe = input('Wählen sie ein Feld zwischen A,1 und E,5 aus:')
 
 Koordinaten = transform_eingabe(eingabe)
@@ -47,3 +49,19 @@ if Koordinaten:
     print('Koordinaten', Koordinaten)
 else:
     print('Keine Koordinaten')
+
+x = Koordinaten[0]
+y = Koordinaten[1]
+
+def process(col, row):
+    feld[row][col] = 0
+
+def play():
+    spielfeld()
+    while True:
+        x, y = Koordinaten[0:1]
+        process(x, y)
+        spielfeld()
+
+
+play()
