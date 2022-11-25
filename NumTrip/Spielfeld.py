@@ -27,7 +27,17 @@ def spielfeld():
     print('      +------+------+------+------+------+')
     zeilennummer= zeilennummer+1
     
-def eingabe():
-    eingabe = input('Welches feld möchten sie anwählen?')
+def transform_eingabe(raw):
+    raw = raw.upper()
+    raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
+    x = raw[0]
+    if not x.isalpha():
+        print('Kein Buchstabe...')
+        return False
+    y = raw[1]
+    if not y.isnumeric():
+        print('Keine Zahl...')
+        return False
+    return [x, y]
 
 eingabe()
