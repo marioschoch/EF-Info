@@ -40,4 +40,10 @@ def transform_eingabe(raw):
         return False
     return [x, y]
 
-eingabe()
+eingabe = input('Wählen sie ein Feld zwischen A,1 und E,5 aus:')
+
+Koordinaten = transform_eingabe(eingabe)
+if Koordinaten:
+    print('Koordinaten', Koordinaten)
+else:
+    print('Keine Koordinaten')
