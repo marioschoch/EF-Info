@@ -8,10 +8,26 @@
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://marioschoch.github.io/EF-Info/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[numtrip-programmieren]]></title>
+        <title type="html"><![CDATA[Numtrip 25/11/22]]></title>
         <id>/2022/11/25/numtrip-programmieren</id>
         <link href="https://marioschoch.github.io/EF-Info/2022/11/25/numtrip-programmieren"/>
         <updated>2022-11-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Neue sachen:]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="neue-sachen">Neue sachen:<a class="hash-link" href="#neue-sachen" title="Direkter Link zur Überschrift">​</a></h2><p><em>Grossbuchstaben in Namen = Zahl die sich nicht mehr verändert.</em>
+<em>Kleinbuchstaben in Namen = Zahl die sich verändern könnte</em></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="veränderungen">Veränderungen<a class="hash-link" href="#veränderungen" title="Direkter Link zur Überschrift">​</a></h2><p>Ich habe die transformation der Eingabe so programmiert dass ich am Ende wirklich nur 2 Werte bekomme; x und y.</p><p>''''
+def transform_eingabe(raw):
+raw = raw.upper()
+raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
+x = raw<!-- -->[0]<!-- -->
+if not x.isalpha():
+print('Kein Buchstabe...')
+return False
+y = raw<!-- -->[1]<!-- -->
+if not y.isnumeric():
+print('Keine Zahl...')
+return False
+return <!-- -->[x, y]<!-- -->
+''''</p><p>Danach habe ich zwei funktionen von Hofer genommen und an meinen code angepasst. Jedoch hat er leider noch nicht funktioniert. Bekam immer fehlermeldungen.</p><p>Auch noch ärgerlich ist dass die Reihenzahl die vorher noch richtig angezeigt wurde wieder überall '1' anzeigt. Dies ist ein Problem dass noch zu beheben ist.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Wiedereinstieg in Phython]]></title>
