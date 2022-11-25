@@ -4,10 +4,16 @@
         <title>Lern Blog Blog</title>
         <link>https://marioschoch.github.io/EF-Info/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Sat, 06 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
+        <item>
+            <title><![CDATA[numtrip-programmieren]]></title>
+            <link>https://marioschoch.github.io/EF-Info/2022/11/25/numtrip-programmieren</link>
+            <guid>/2022/11/25/numtrip-programmieren</guid>
+            <pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Wiedereinstieg in Phython]]></title>
             <link>https://marioschoch.github.io/EF-Info/2022/08/06/wiedereinstieg-python</link>

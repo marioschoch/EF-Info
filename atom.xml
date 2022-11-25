@@ -2,11 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://marioschoch.github.io/EF-Info/</id>
     <title>Lern Blog Blog</title>
-    <updated>2022-08-06T00:00:00.000Z</updated>
+    <updated>2022-11-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://marioschoch.github.io/EF-Info/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://marioschoch.github.io/EF-Info/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[numtrip-programmieren]]></title>
+        <id>/2022/11/25/numtrip-programmieren</id>
+        <link href="https://marioschoch.github.io/EF-Info/2022/11/25/numtrip-programmieren"/>
+        <updated>2022-11-25T00:00:00.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Wiedereinstieg in Phython]]></title>
         <id>/2022/08/06/wiedereinstieg-python</id>

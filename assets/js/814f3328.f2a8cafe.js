@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkef_website_template=self.webpackChunkef_website_template||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"numtrip-programmieren","permalink":"/EF-Info/2022/11/25/numtrip-programmieren"},{"title":"Wiedereinstieg in Phython","permalink":"/EF-Info/2022/08/06/wiedereinstieg-python"}]}')}}]);
