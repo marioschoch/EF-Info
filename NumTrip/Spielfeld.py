@@ -6,7 +6,7 @@ feld =[[2,4,4,4,2],[1244,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
 
 def spielfeld():
     zeilennummer=1
-    print('          A      B      C      D      E')
+    print('          1      2      3      4      5')
     for zeile in feld:
         print('      +------+------+------+------+------+')
         print('      |      |      |      |      |      |')
@@ -23,17 +23,17 @@ def spielfeld():
             else:
                 print(f'|   {(zelle)}  ', end='')
         print('|')
+        zeilennummer= zeilennummer+1
         print('      |      |      |      |      |      |')
     print('      +------+------+------+------+------+')
-    zeilennummer= zeilennummer+1
 
 
 def transform_eingabe(raw):
     raw = raw.upper()
     raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
     x = raw[0]
-    if not x.isalpha():
-        print('Kein Buchstabe...')
+    if not x.isnumeric():
+        print('Keine Zahl...')
         return False
     y = raw[1]
     if not y.isnumeric():
@@ -41,17 +41,9 @@ def transform_eingabe(raw):
         return False
     return [x, y]
 
-    
-eingabe = input('Wählen sie ein Feld zwischen A,1 und E,5 aus:')
-
-Koordinaten = transform_eingabe(eingabe)
-if Koordinaten:
-    print('Koordinaten', Koordinaten)
-else:
-    print('Keine Koordinaten')
-
-x = Koordinaten[0]
-y = Koordinaten[1]
+def eingabe():
+    eingabe = input('Gibt eine Splate und Zeile an:')
+    eingabe = transform_eingabe(eingabe)
 
 def process(col, row):
     feld[row][col] = 0
@@ -59,9 +51,8 @@ def process(col, row):
 def play():
     spielfeld()
     while True:
-        x, y = Koordinaten[0:1]
+        x, y = eingabe()
         process(x, y)
         spielfeld()
-
 
 play()
