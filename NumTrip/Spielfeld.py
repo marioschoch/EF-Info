@@ -34,16 +34,17 @@ def transform_eingabe(raw):
     x = raw[0]
     if not x.isnumeric():
         print('Keine Zahl...')
-        return False
+        return [False, False]
     y = raw[1]
     if not y.isnumeric():
         print('Keine Zahl...')
-        return False
-    return [x, y]
+        return [False, False]
+    return [int(x)-1, int(y)-1]
 
 def eingabe():
     eingabe = input('Gibt eine Splate und Zeile an:')
     eingabe = transform_eingabe(eingabe)
+    return eingabe
 
 def process(col, row):
     feld[row][col] = 0
