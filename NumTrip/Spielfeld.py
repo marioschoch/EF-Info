@@ -33,11 +33,11 @@ def transform_eingabe(raw):
     raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
     x = raw[0]
     if not x.isnumeric():
-        print('Keine Zahl...')
+        print('Die Spalteneingabe ist keine Zahl...')
         return [False, False]
     y = raw[1]
     if not y.isnumeric():
-        print('Keine Zahl...')
+        print('Die Zeileneingabe ist keine Zahl...')
         return [False, False]
     return [int(x)-1, int(y)-1]
 
