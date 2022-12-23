@@ -1,13 +1,13 @@
 
-feld =[[2,4,4,4,2],[1244,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
+spielfeld =[[2,4,4,4,2],[2,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
 
 #print('hallo', Spielfeld[0][0])
 #print(f'hallo      {Spielfeld[0][0]}', )  #formatiert
 
-def spielfeld():
+def show_spielfeld():
     zeilennummer=1
     print('          1      2      3      4      5')
-    for zeile in feld:
+    for zeile in spielfeld:
         print('      +------+------+------+------+------+')
         print('      |      |      |      |      |      |')
         print(f'   {(zeilennummer)}  ', end='')
@@ -46,14 +46,31 @@ def eingabe():
     eingabe = transform_eingabe(eingabe)
     return eingabe
 
-def process(col, row):
-    feld[row][col] = 0
+def removeNumbers(x, y, alteZahl):
+
+    # Check if coordinates are in Spielfeld
+    if x < 1 or x > 5:
+        return False
+    if y < 1 or y > 5:
+        return False
+    
+    #Falls alte zahl noch in Feld, ändert sie und wiedholt das proramm.
+    if spielfeld[x][y] == alteZahl:
+        spielfeld[x][y] = 0
+        removeNumbers(x, y + 1, alteZahl)  # unten
+        removeNumbers(x, y - 1, alteZahl)  # oben
+        removeNumbers(x + 1, y, alteZahl)  # rechts
+        removeNumbers(x - 1, y, alteZahl)  # links
+        return True
+    else:
+        return False
 
 def play():
-    spielfeld()
+    show_spielfeld()
     while True:
         x, y = eingabe()
-        process(x, y)
-        spielfeld()
+        altezahl = spielfeld[x][y]
+        removeNumbers(x, y, altezahl)
+        show_spielfeld()
 
 play()
