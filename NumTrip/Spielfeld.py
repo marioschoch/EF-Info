@@ -28,22 +28,28 @@ def show_spielfeld():
     print('      +------+------+------+------+------+')
 
 
-def transform_eingabe(raw):
+def transform_eingabe(raw): # Kontolliert ob eingabe nur nummern enthält, streicht leerschläge weg gibt anschliessend die erste stelle als x und die zweite als y wieder
     raw = raw.upper()
     raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
     x = raw[0]
     if not x.isnumeric():
-        print('Die Spalteneingabe ist keine Zahl...')
-        return [False, False]
+        print('Keine gültige Eingabe')
+        return None
     y = raw[1]
     if not y.isnumeric():
-        print('Die Zeileneingabe ist keine Zahl...')
-        return [False, False]
+        print('Keine gültige Eingabe')
+        return None
     return [int(x)-1, int(y)-1]
 
-def eingabe():
+def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_eingabe erfolgreich überlebt, falls ja wiedergibt es die eingabe als x,y wert
+    valid = False
+    while not valid: 
+        try:
     eingabe = input('Gibt eine Splate und Zeile an:')
     eingabe = transform_eingabe(eingabe)
+            valid = eingabe is not None
+        except:
+            print('Keine gültige Eingabe')
     return eingabe
 
 def removeNumbers(x, y, alteZahl):
