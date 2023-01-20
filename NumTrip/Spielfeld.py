@@ -81,8 +81,11 @@ def removeNumbers(x, y, alteZahl):
         return False
 
 def auffüllen(): #füllt felder die auf 0 gesetzt sind auf
-    for i in range(5):
-        for l in range(4,0,-1):
+    anfangszahlen = [1,2,4]
+    for i in range(0,5):
+        for j in range(4,-1, -1):
+            if spielfeld[i][j] == 0:
+                spielfeld[i][j] = random.choice(anfangszahlen)
 
 def verdoppeln(): #vedoppelt zahl die ausgewählt wurde antstatt sie zu löschen
 
