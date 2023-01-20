@@ -86,9 +86,9 @@ def auffüllen(): #füllt felder die auf 0 gesetzt sind auf
         for j in range(4,-1, -1):
             if spielfeld[i][j] == 0:
                 spielfeld[i][j] = random.choice(anfangszahlen)
+            
 
-
-
+            
 
 def play():
     random_spielfeld()
@@ -96,7 +96,7 @@ def play():
     while True:
         x, y = eingabe()
         altezahl = spielfeld[x][y] #weist ausgewählte zahl der variabel 'altezahl' zu
-        removeNumbers(x, y, altezahl)
+        removeNumbers(x, y, altezahl) 
         spielfeld[x][y] = altezahl*2 #verdoppelt ausgewählte zahl und setzt sie an ausgewählter stelle ein (soll nur funktionieren wenn nicht alleinestehend)
         auffüllen()
         show_spielfeld()
