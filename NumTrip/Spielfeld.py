@@ -49,12 +49,12 @@ def eingabe():
 def removeNumbers(x, y, alteZahl):
 
     # Check if coordinates are in Spielfeld
-    if x < 1 or x > 5:
+    if x < 0 or x > 4:
         return False
-    if y < 1 or y > 5:
+    if y < 0 or y > 4:
         return False
     
-    #Falls alte zahl noch in Feld, ändert sie und wiedholt das proramm.
+    #Falls alte zahl noch in Feld, ändert sie und wiedholt das programm.
     if spielfeld[x][y] == alteZahl:
         spielfeld[x][y] = 0
         removeNumbers(x, y + 1, alteZahl)  # unten
