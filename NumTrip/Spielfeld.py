@@ -71,9 +71,11 @@ def removeNumbers(x, y, alteZahl):
     else:
         return False
 
-def auffüllen():
+def auffüllen(): #füllt felder die auf 0 gesetzt sind auf
     for i in range(5):
         for l in range(4,0,-1):
+
+def verdoppeln(): #vedoppelt zahl die ausgewählt wurde antstatt sie zu löschen
 
 
 def play():
