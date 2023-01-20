@@ -54,7 +54,7 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
     valid = False
     while not valid: 
         try:
-            eingabe = input('Gibt eine Splate und Zeile an:')
+            eingabe = input('Gibt eine Spalte und Zeile an:')
             eingabe = transform_eingabe(eingabe)
             valid = eingabe is not None
         except:
