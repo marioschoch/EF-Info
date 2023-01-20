@@ -4,7 +4,7 @@ spielfeld =[[2,4,4,4,2],[2,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
 #print('hallo', Spielfeld[0][0])
 #print(f'hallo      {Spielfeld[0][0]}', )  #formatiert
 
-def show_spielfeld():
+def show_spielfeld(): # Zeigt dem spieler das spielfeld und die darin vorhandenen Werte an
     zeilennummer=1
     print('          1      2      3      4      5')
     for zeile in spielfeld:
@@ -45,8 +45,8 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
     valid = False
     while not valid: 
         try:
-    eingabe = input('Gibt eine Splate und Zeile an:')
-    eingabe = transform_eingabe(eingabe)
+            eingabe = input('Gibt eine Splate und Zeile an:')
+            eingabe = transform_eingabe(eingabe)
             valid = eingabe is not None
         except:
             print('Keine gültige Eingabe')
@@ -70,6 +70,11 @@ def removeNumbers(x, y, alteZahl):
         return True
     else:
         return False
+
+def auffüllen():
+    for i in range(5):
+        for l in range(4,0,-1):
+
 
 def play():
     show_spielfeld()
