@@ -1,5 +1,14 @@
 
-spielfeld =[[2,4,4,4,2],[2,2,4,2,2],[2,2,4,4,2],[2,4,4,4,4],[4,4,4,4,4]]
+
+import random
+
+def random_spielfeld(): #generiert ein zufälliges spielfeld mit den zahlen 1, 2 oder 4
+    anfangszahlen = [1,2,4]
+    for i in range(0,5):
+        for j in range(0,5):
+            spielfeld[i][j] = random.choice(anfangszahlen)
+
+spielfeld =[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 
 #print('hallo', Spielfeld[0][0])
 #print(f'hallo      {Spielfeld[0][0]}', )  #formatiert
