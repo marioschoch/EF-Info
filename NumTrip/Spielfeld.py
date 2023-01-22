@@ -84,21 +84,20 @@ def removeNumbers(x, y, alteZahl):
     else:
         return False
 
-def runterfallen(): # Falls unten im Feld lücken entstehen, schiebt es die zahlen darüber nach unten so dass alle leeren Felder oben sind
+def runterfallen():
     for k in range(5):
-        for i in range(4,0,-1): # [4,3,2,1]
+        for i in range(4,0,-1):
             for j in range(5):
                 if spielfeld[i][j] == 0:
                     spielfeld[i][j] = spielfeld[i-1][j]
                     spielfeld[i-1][j] = 0
 
+def auffüllen(): #füllt felder die auf 0 gesetzt sind auf
     anfangszahlen = [1,2,4]
     for i in range(0,5):
         for j in range(4,-1, -1):
             if spielfeld[i][j] == 0:
                 spielfeld[i][j] = random.choice(anfangszahlen)
-            
-
             
 
 def play():
@@ -109,6 +108,7 @@ def play():
         altezahl = spielfeld[x][y] #weist ausgewählte zahl der variabel 'altezahl' zu
         removeNumbers(x, y, altezahl) 
         spielfeld[x][y] = altezahl*2 #verdoppelt ausgewählte zahl und setzt sie an ausgewählter stelle ein (soll nur funktionieren wenn nicht alleinestehend)
+        runterfallen()
         auffüllen()
         show_spielfeld()
 
