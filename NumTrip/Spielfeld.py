@@ -84,7 +84,14 @@ def removeNumbers(x, y, alteZahl):
     else:
         return False
 
-def auffüllen(): #füllt felder die auf 0 gesetzt sind auf
+def runterfallen(): # Falls unten im Feld lücken entstehen, schiebt es die zahlen darüber nach unten so dass alle leeren Felder oben sind
+    for k in range(5):
+        for i in range(4,0,-1): # [4,3,2,1]
+            for j in range(5):
+                if spielfeld[i][j] == 0:
+                    spielfeld[i][j] = spielfeld[i-1][j]
+                    spielfeld[i-1][j] = 0
+
     anfangszahlen = [1,2,4]
     for i in range(0,5):
         for j in range(4,-1, -1):
