@@ -38,15 +38,19 @@ def show_spielfeld(): # Zeigt dem spieler das spielfeld und die darin vorhandene
 
 
 def transform_eingabe(raw): # Kontolliert ob eingabe nur nummern enthält, streicht leerschläge weg gibt anschliessend die erste stelle als x und die zweite als y wieder
-    raw = raw.upper()
     raw = raw.replace(' ','').replace('-','').replace('.','').replace(',','').replace('/','').replace(';','').replace(':','')
+    if len(raw) == 2: # Kontolliert ob eingabe 2 lang ist, falls ja gehts weiter, sonst gibts nichts wieder
+        pass
+    else:
+        print('Bitte gib nur 2 Zeichen ein!')
+        return None
     x = raw[0]
     if not x.isnumeric():
-        print('Keine gültige Eingabe')
+        print('Spalte muss eine Zahl sein!')
         return None
     y = raw[1]
     if not y.isnumeric():
-        print('Keine gültige Eingabe')
+        print('Zeile muss eine Zahl sein!')
         return None
     return [int(x)-1, int(y)-1]
 
