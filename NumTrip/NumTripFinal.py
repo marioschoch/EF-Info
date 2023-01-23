@@ -66,6 +66,39 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
     
     nebeneinander = False # Kontrolliert ob die ausgewählte zahl alleinestehend oder nicht alleinestehend ist
     x, y = eingaben
+
+    if x<0 or x>4: # Kontrolliert ob eingabe x zwischen 1 und 5 war
+        print('Zahl nicht zwischen 1 & 5!')
+        eingabe()
+    if y<0 or y>4: # Kontrolliert ob eingabe y zwischen 1 und 5 war
+        print('Zahl nicht zwischen 1 & 5!')
+        eingabe()
+
+    if x==4 and y<4 and y>0: # Testet randzahlen (ausser eckzahlen) auf benachbarte gleiche zahlen
+        if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+            nebeneinander = True
+    if x==0 and y<4 and y>0:
+        if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x+1][y]:
+           nebeneinander = True
+    if y==4 and x<4 and x>0:
+        if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x-1][y]:
+            nebeneinander = True
+    if y==0 and x<4 and x>0:
+        if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+            nebeneinander = True
+    if y==0 and x==0: # Testet Eckzahlen auf benachbarte gleiche Zahlen
+        if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y+1]:
+            nebeneinander = True
+    if y==0 and x==4:
+        if spielfeld[x][y] == spielfeld[x-1][y] or spielfeld[x][y] == spielfeld[x][y+1]:
+            nebeneinander = True
+    if y==4 and x==0:
+        if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1]:
+            nebeneinander = True
+    if y==4 and x==4:
+        if spielfeld[x][y] == spielfeld[x-1][y] or spielfeld[x][y] == spielfeld[x][y-1]:
+            nebeneinander = True
+    if x>0 and x<4 and y>0 and y<4: # Testet alle mittleren zahlen auf benachbarte gleiche zahlen
     if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
         nebeneinander = True
     if nebeneinander == True: # Falls nicht alleinestehend geht es weiter
