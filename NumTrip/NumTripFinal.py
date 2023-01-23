@@ -58,12 +58,22 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
     valid = False
     while not valid: 
         try:
-            eingabe = input('Gibt eine Spalte und Zeile an:')
-            eingabe = transform_eingabe(eingabe)
-            valid = eingabe is not None
+            eingaben = input('Gibt eine Spalte und Zeile an:')
+            eingaben = transform_eingabe(eingaben)
+            valid = eingaben is not None
         except:
             print('Keine gültige Eingabe')
-    return eingabe
+    
+    nebeneinander = False # Kontrolliert ob die ausgewählte zahl alleinestehend oder nicht alleinestehend ist
+    x, y = eingaben
+    if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+        nebeneinander = True
+    if nebeneinander == True: # Falls nicht alleinestehend geht es weiter
+        pass
+    else: # Falls alleinestehend sagt es uns dies, und fordert eine neue Eingabe
+        print('Alleinstehende Zahl, bitte gib eine neue ein!')
+        eingabe()
+    return eingaben
 
 def removeNumbers(x, y, alteZahl):
 
@@ -97,8 +107,7 @@ def auffüllen(): # füllt felder die auf 0 gesetzt sind auf
     for i in range(0,5):
         for j in range(4,-1, -1): # [4,3,2,1,0]
             if spielfeld[i][j] == 0:
-                spielfeld[i][j] = random.choice(anfangszahlen)
-            
+                spielfeld[i][j] = random.choice(anfangszahlen)           
 
 def play():
     random_spielfeld()
@@ -117,4 +126,6 @@ play()
 '''
 To do
 - Check if chosen number has the same number next to it, if not, abort
+- Integrate a goal
+- Make a Score
 '''
