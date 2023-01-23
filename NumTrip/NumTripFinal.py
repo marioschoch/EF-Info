@@ -99,8 +99,8 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
         if spielfeld[x][y] == spielfeld[x-1][y] or spielfeld[x][y] == spielfeld[x][y-1]:
             nebeneinander = True
     if x>0 and x<4 and y>0 and y<4: # Testet alle mittleren zahlen auf benachbarte gleiche zahlen
-    if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
-        nebeneinander = True
+        if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+            nebeneinander = True
     if nebeneinander == True: # Falls nicht alleinestehend geht es weiter
         pass
     else: # Falls alleinestehend sagt es uns dies, und fordert eine neue Eingabe
@@ -116,7 +116,7 @@ def removeNumbers(x, y, alteZahl):
     if y < 0 or y > 4:
         return False
     
-    #Falls alte zahl noch in Feld, ändert sie und wiedholt das programm.
+    #Falls alte zahl noch in Feld, ändert sie und wiederholt das programm.
     if spielfeld[x][y] == alteZahl:
         spielfeld[x][y] = 0
         removeNumbers(x, y + 1, alteZahl)  # unten
@@ -158,7 +158,7 @@ play()
 
 '''
 To do
-- Check if chosen number has the same number next to it, if not, abort
+- Fix problem where program takes number that failed before for current eingabe? (stocked somewhere??)
 - Integrate a goal
 - Make a Score
 '''
