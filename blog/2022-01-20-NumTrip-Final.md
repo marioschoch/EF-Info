@@ -8,7 +8,7 @@ Ziel ist, möglichst viel zu kombinieren, um die grösstmögliche Zahl zu erreic
 
 Folgenderweise sollte man sich das Spielfeld vorstellen:
 
-![](/docs/Images/Bildschirmfoto%202023-01-26%20um%2011.34.48.png)
+![spielfeld](/docs/Images/Bildschirmfoto%202023-01-26%20um%2011.34.48.png)
 *Zufällig generiertes Spielfeld*
 
 ## Wie habe ich es umgesetzt?
