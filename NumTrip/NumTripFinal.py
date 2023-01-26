@@ -69,10 +69,10 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
 
     if x<0 or x>4: # Kontrolliert ob eingabe x zwischen 1 und 5 war
         print('Zahl nicht zwischen 1 & 5!')
-        eingabe()
+        return eingabe()
     if y<0 or y>4: # Kontrolliert ob eingabe y zwischen 1 und 5 war
         print('Zahl nicht zwischen 1 & 5!')
-        eingabe()
+        return eingabe()
 
     if x==4 and y<4 and y>0: # Testet randzahlen (ausser eckzahlen) auf benachbarte gleiche zahlen
         if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
@@ -105,7 +105,7 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
         return eingaben
     else: # Falls alleinestehend sagt es uns dies, und fordert eine neue Eingabe
         print('Alleinstehende Zahl, bitte gib eine neue ein!')
-        eingabe()
+        return eingabe()
 
 
 def removeNumbers(x, y, alteZahl):
