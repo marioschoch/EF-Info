@@ -140,7 +140,14 @@ def auffüllen(): # füllt felder die auf 0 gesetzt sind auf
     for i in range(0,5):
         for j in range(4,-1, -1): # [4,3,2,1,0]
             if spielfeld[i][j] == 0:
-                spielfeld[i][j] = random.choice(anfangszahlen)           
+                spielfeld[i][j] = random.choice(anfangszahlen)
+
+def gewonnen():
+    for i in range(5):
+        for j in range(5):
+            if spielfeld[i][j] == 264:
+                print('YOU WON THE GAME!')
+                return True
 
 def play():
     random_spielfeld()
@@ -153,6 +160,8 @@ def play():
         runterfallen()
         auffüllen()
         show_spielfeld()
+        if gewonnen() == True:
+            return False
 
 play()
 
