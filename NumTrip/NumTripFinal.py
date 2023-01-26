@@ -102,11 +102,11 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
         if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
             nebeneinander = True
     if nebeneinander == True: # Falls nicht alleinestehend geht es weiter
-        pass
+        return eingaben
     else: # Falls alleinestehend sagt es uns dies, und fordert eine neue Eingabe
         print('Alleinstehende Zahl, bitte gib eine neue ein!')
         eingabe()
-    return eingaben
+
 
 def removeNumbers(x, y, alteZahl):
 
