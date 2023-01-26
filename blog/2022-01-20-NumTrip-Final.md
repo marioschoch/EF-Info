@@ -19,7 +19,7 @@ Folgenderweise sollte man sich das Spielfeld vorstellen:
 
 2. Spielfeld Programmieren
 
-    Diese Aufgabe habe ich
+    Diese Aufgabe habe ich mir auf Grund der einfachheit in zwei Teile aufgeteilt
 ## Welche Probleme sind aufgetreten?
 ---
 ## Tipps für nachahmer:
