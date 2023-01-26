@@ -142,7 +142,7 @@ def auffüllen(): # füllt felder die auf 0 gesetzt sind auf
             if spielfeld[i][j] == 0:
                 spielfeld[i][j] = random.choice(anfangszahlen)
 
-def gewonnen():
+def gewonnen(): # kontrolliert ob man gewonnen hat oder nicht
     for i in range(5):
         for j in range(5):
             if spielfeld[i][j] == 264:
