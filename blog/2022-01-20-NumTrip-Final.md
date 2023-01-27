@@ -38,13 +38,49 @@ HIER SPIELFELD EINFÜGEN (SCREENSHOT)
     - veränderung von strings durch ``.replace`` oder ``.isnumeric``
     - trial and error mit ``try except``
     
-    Mit viel bastlerei bin ich dann zum erfolg gekommen, leider war dies jedoch noch nicht alles. Mann muss ja auch noch kontrollieren ob die Zahl einen gleichen nachbarn hat... Dies hat mir sehr viel Zeit gekostet. Da ich irgendwann keine Geduld mehr hatte habe ich einfach mit schreiben begonnen und einen riesigen Spaghetti code geschrieben den man wahrscheindlich in halb so vielen Zeilen hätte schreiben können. Egal. Er funktioniert:)
+    Mit viel bastlerei bin ich dann zum erfolg gekommen, leider war dies jedoch noch nicht alles. Mann muss ja auch noch kontrollieren ob die Zahl einen gleichen nachbarn hat... Dies hat mir am meisten Zeit gekostet. Da ich irgendwann keine Geduld mehr hatte habe ich einfach mit schreiben begonnen und einen riesigen Spaghetticode geschrieben den man wahrscheinlich in halb so vielen Zeilen hätte schreiben können. Egal. Er funktioniert:)
 
-4.
+4. Floodfill Algorithmus
+
+    Dies ist der Teil für den man am meisten programmier Verständnis braucht. Es ist ein Algorithmus der man immer wieder braucht und für den es sogar eine eigene [Wikipedia seite](https://de.wikipedia.org/wiki/Floodfill) gibt. Wir haben ihn gebraucht um zu kontrollieren ob oben, unten oder auf einer der Seiten die gleiche Zahl steht wie man ausgewählt hat. Falls ja, soll es die Zahl löschen und das Programm noch einmal ausführen bis alle nebeneinanderstehenden Zahlen gelöscht sind.
+
+5. Leere Felder auffüllen
+
+    - Lücken füllen
+
+        Da durch den Floodfill Algorithmus natürlich überall leere Felder entstehen, sollte man eine künstliche Schwerkraft erzeugen. Sie sollte sobald es unter einer Zahl eine Lücke gibt, diese nach unten ziehen so dass alle leeren Felder oben im Spielfeld anzutreffen sind. 
+        
+        Folgendes war mein Lösungsansatz:
+        
+        1. Jedes Feld in meinem Spielfeld der Reihe nach durchgehen um zu schauen ob es leer ist oder nicht.
+
+        2. Falls das Feld leer ist, soll es den Wert des oberen Feldes nehmen und in das eigene Feld einsetzen. Das Feld von oben muss danach allerdings geleert werden. Falls es schon einen Wert hat, kann es direkt zum nächsten Feld springen.
+
+        3. Dieser ganze Prozess muss anschliessend vier mal wiederholt werden für den Fall dass ganz oben eine Zahl steht und unten vier leere Felder sind. (Bei jedem Mal wird sie nur ein Feld nach unten geschoben)
+
+    - Zahlen einfügen
+
+        Sobald sich die leeren Felder oben befinden, war es leichte Arbeit sie mit zufälligen Zahlen zu versorgen. Es reichte mir, einen Teil des Codes für die generierung des Spielfeldes zu übernehmen und ein `if spielfeld[i][j] == 0:`einzufügen. Danach klappte es schon wunderbar.
+
+6. Last but not least
+
+    Am Schluss integrierte ich noch die `verloren()` und `gewonnen()` Funktionen. Diese kontrollieren nach jedem Zug a) Ob es noch einen möglichen Zug gibt, b) Ob die Zielzahl (Ich habe 256 festgelegt) erreicht wurde.
+
+    Wurde eines dieser Ziele erfüllt, endet das Spiel entweder mit einer sehr erfreulichen Nachricht, oder mit einer Nachricht die dich noch tagelang verfolgen wird...
 
 ---
 ## Welche Probleme sind aufgetreten?
+
+Dieses Projekt war für mich die erste richtige Programmier-aufgabe. Wie es sich also gehört, hatte ich natürlich auch immer wieder Hänger und Schwierigkeiten bei denen ich nicht wirklich weiter kam. Um ein paar zu nennen: Fehlendes vorstellungsvermögen beim Code schreiben, fehlender python Wortschatz und auch eine falsche ansichtsweise auf nicht funktionierenden Code. 
+
+All diese Sachen haben sich je länger ich mit python gearbeitet habe verbessert und schon bald konnte ich wirklich auch selbst Codeblöcke schreiben. Was mir immer geholfen hat ist mir die Sachen erklären zu lassen und danach selbst zu versuchen. Sobald man etwas versteht, kann man es auch selbst anwenden.
+
 ---
 ## Tipps für nachahmer:
+
+Das allerwichtigste für mich war es mich mit der Sprache vertraut zu machen. Die unzähligen Repetitionskurse auf der [Website](https://ofi.gbsl.website) von Herr Hofer haben mir sehr geholfen. Wichtig ist aber auch immer die gelerneten Sachen direkt anzuwenden um sie auch zu können.
+
+Der zweite wichtige Punkt ist der Top-down Entwurf. Er hilft sehr beim strukturieren der Arbeit und macht es dir einfacher ein so grosses Projekt in viele, kleinere, einfachere Aufaben zu unterteilen die man auch lösen kann. Am Schluss das Puzzle zusammensetzten kann jeder;)
+
 ---
 ## Wie kann man es spielen?
