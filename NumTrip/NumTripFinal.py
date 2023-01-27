@@ -145,9 +145,40 @@ def auffüllen(): # füllt felder die auf 0 gesetzt sind auf
 def gewonnen(): # kontrolliert ob man gewonnen hat oder nicht
     for i in range(5):
         for j in range(5):
-            if spielfeld[i][j] == 264:
-                print('YOU WON THE GAME!')
+            if spielfeld[i][j] == 8:
+                print('DU HAST GEWONNEN!')
                 return True
+
+def verloren():
+    for x in range(5):
+        for y in range(5):
+            if x==4 and y<4 and y>0: # Testet randzahlen (ausser eckzahlen) auf benachbarte gleiche zahlen
+                if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+                    return True
+            if x==0 and y<4 and y>0:
+                if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x+1][y]:
+                    return True
+            if y==4 and x<4 and x>0:
+                if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x-1][y]:
+                    return True
+            if y==0 and x<4 and x>0:
+                if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+                    return True
+            if y==0 and x==0: # Testet Eckzahlen auf benachbarte gleiche Zahlen
+                if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y+1]:
+                    return True
+            if y==0 and x==4:
+                if spielfeld[x][y] == spielfeld[x-1][y] or spielfeld[x][y] == spielfeld[x][y+1]:
+                    return True
+            if y==4 and x==0:
+                if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1]:
+                    return True
+            if y==4 and x==4:
+                if spielfeld[x][y] == spielfeld[x-1][y] or spielfeld[x][y] == spielfeld[x][y-1]:
+                    return True
+            if x>0 and x<4 and y>0 and y<4: # Testet alle mittleren zahlen auf benachbarte gleiche zahlen
+                if spielfeld[x][y] == spielfeld[x+1][y] or spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
+                    return True
 
 def play():
     random_spielfeld()
@@ -161,6 +192,11 @@ def play():
         auffüllen()
         show_spielfeld()
         if gewonnen() == True:
+            return False
+        if verloren() == True:
+            pass
+        else:
+            print('DU HAST VERLOREN HAHAHAHHAHAHA')
             return False
 
 play()
