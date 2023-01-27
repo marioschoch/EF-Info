@@ -200,10 +200,3 @@ def play():
             return False
 
 play()
-
-'''
-To do
-- Fix problem where program takes number that failed before for current eingabe? (stocked somewhere??)
-- Integrate a goal
-- Make a Score
-'''
