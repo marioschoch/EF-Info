@@ -4,8 +4,8 @@ import random
 
 def random_spielfeld(): #generiert ein zufälliges spielfeld mit den zahlen 1, 2 oder 4
     anfangszahlen = [1,2,4]
-    for i in range(0,5):
-        for j in range(0,5):
+    for i in range(5):
+        for j in range(5):
             spielfeld[i][j] = random.choice(anfangszahlen)
 
 spielfeld =[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
@@ -137,15 +137,15 @@ def runterfallen(): # Falls unten im Feld lücken entstehen, schiebt es die zahl
 
 def auffüllen(): # füllt felder die auf 0 gesetzt sind auf
     anfangszahlen = [1,2,4]
-    for i in range(0,5):
-        for j in range(4,-1, -1): # [4,3,2,1,0]
+    for i in range(5):
+        for j in range(5):
             if spielfeld[i][j] == 0:
                 spielfeld[i][j] = random.choice(anfangszahlen)
 
 def gewonnen(): # kontrolliert ob man gewonnen hat oder nicht
     for i in range(5):
         for j in range(5):
-            if spielfeld[i][j] == 8:
+            if spielfeld[i][j] == 256:
                 print('DU HAST GEWONNEN!')
                 return True
 
