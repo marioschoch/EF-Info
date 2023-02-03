@@ -74,7 +74,7 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
         print('Zahl nicht zwischen 1 & 5!')
         return eingabe()
 
-    if x==4 and y<4 and y>0: # Testet randzahlen (ausser eckzahlen) auf benachbarte gleiche zahlen
+    if x == 4 and y < 4 and y > 0: # Testet randzahlen (ausser eckzahlen) auf benachbarte gleiche zahlen
         if spielfeld[x][y] == spielfeld[x][y-1] or spielfeld[x][y] == spielfeld[x][y+1] or spielfeld[x][y] == spielfeld[x-1][y]:
             nebeneinander = True
     if x==0 and y<4 and y>0:
