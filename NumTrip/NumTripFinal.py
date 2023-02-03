@@ -67,10 +67,10 @@ def eingabe(): # Fordert benutzer zu eingabe auf, überprüft ob es transform_ei
     nebeneinander = False # Kontrolliert ob die ausgewählte zahl alleinestehend oder nicht alleinestehend ist
     x, y = eingaben
 
-    if x<0 or x>4: # Kontrolliert ob eingabe x zwischen 1 und 5 war
+    if x < 0 or x > 4: # Kontrolliert ob eingabe x zwischen 1 und 5 war
         print('Zahl nicht zwischen 1 & 5!')
         return eingabe()
-    if y<0 or y>4: # Kontrolliert ob eingabe y zwischen 1 und 5 war
+    if y < 0 or y > 4: # Kontrolliert ob eingabe y zwischen 1 und 5 war
         print('Zahl nicht zwischen 1 & 5!')
         return eingabe()
 
